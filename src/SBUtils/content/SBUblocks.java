@@ -49,16 +49,17 @@ import static mindustry.type.ItemStack.*;
 
 import SBUtils.content.types.blocks.*;
 import SBUtils.content.types.blocks.distribution.*;
-
+import SBUtils.content.types.blocks.logic.*;
 public class SBUblocks {
     public static Block
 
-    toggleGate;
+    drawProcessor;
 
     public static void load(){
-        toggleGate = new ToggleGate("toggle-gate"){{
-            requirements(Category.distribution, with(Items.lead, 2, Items.copper, 4));
-            buildCostMultiplier = 3f;
+        drawProcessor = new DrawProcessor("toggle-gate"){{
+            requirements(Category.logic, with(Items.copper, 90, Items.lead, 75, Items.silicon, 65, Items.metaglass, 10));
+
+            instructionsPerTick = 2;
         }};
     }
 }
