@@ -14,6 +14,7 @@ import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
 
+import mindustry.world.blocks.ConstructBlock.*;
 import mindustry.gen.*;
 import mindustry.type.*;
 import mindustry.ai.types.*;
@@ -29,6 +30,11 @@ import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.blocks.ConstructBlock.*;
 import mindustry.world.meta.*;
+
+import java.io.*;
+import java.util.zip.*;
+
+import static mindustry.Vars.*;
 
 //is this too much?
 import arc.*;
@@ -124,7 +130,7 @@ public class DrawProcessor extends LogicBlock {
         }
     }
 
-    public class LogicDisplayBuild extends Building{
+    public class DrawProcessorBuild extends Building{
         public FrameBuffer buffer;
         public float color = Color.whiteFloatBits;
         public float stroke = 1f;
