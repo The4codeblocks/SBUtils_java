@@ -1,7 +1,9 @@
-package SBUtils.content.types.blocks.distribution;
+package SBUtils.content.types.blocks.logic;
 
 import arc.audio.*;
 import arc.math.*;
+import arc.graphics.*;
+import arc.graphics.gl.*;
 import arc.graphics.g2d.*;
 import arc.Graphics.*;
 import arc.Graphics.Cursor.*;
@@ -13,8 +15,10 @@ import arc.struct.Bits;
 import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
+import arc.*;
 
-import mindustry.world.blocks.ConstructBlock.*;
+import mindustry.annotations.Annotations.*;
+
 import mindustry.gen.*;
 import mindustry.type.*;
 import mindustry.ai.types.*;
