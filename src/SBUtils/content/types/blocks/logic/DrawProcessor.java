@@ -17,8 +17,6 @@ import arc.util.*;
 import arc.util.io.*;
 import arc.*;
 
-import mindustry.annotations.Annotations.*;
-
 import mindustry.gen.*;
 import mindustry.type.*;
 import mindustry.ai.types.*;
