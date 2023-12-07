@@ -32,6 +32,7 @@ import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.blocks.ConstructBlock.*;
 import mindustry.world.meta.*;
+import mindustry.world.blocks.logic.*;
 
 import java.io.*;
 import java.util.zip.*;
@@ -57,7 +58,7 @@ public class DrawProcessor extends LogicBlock {
         commandLinePoly = 8,
         commandTriangle = 9,
         commandImage = 10,
-        commandCharacter = 11;
+        commandPrint = 11;
 
     public int maxSides = 32;
 
