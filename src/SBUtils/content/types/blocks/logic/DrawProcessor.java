@@ -84,13 +84,13 @@ public class DrawProcessor extends LogicBlock {
         configurable = true;
         schematicPriority = 5;
 
-        config(byte[].class, (LogicBuild build, byte[] data) -> {
+        config(byte[].class, (DrawProcessorBuild build, byte[] data) -> {
             if(!accessible()) return;
 
             build.readCompressed(data, true);
         });
 
-        config(Integer.class, (LogicBuild entity, Integer pos) -> {
+        config(Integer.class, (DrawProcessorBuild entity, Integer pos) -> {
             if(!accessible()) return;
 
             //if there is no valid link in the first place, nobody cares
@@ -98,7 +98,6 @@ public class DrawProcessor extends LogicBlock {
             var lbuild = world.build(pos);
             int x = lbuild.tileX(), y = lbuild.tileY();
 
-            LogicLink link = entity.links.find(l -> l.x == x && l.y == y);
             String bname = getLinkName(lbuild.block);
 
             if(link != null){
@@ -275,7 +274,7 @@ public class DrawProcessor extends LogicBlock {
         return name;
     }
 
-    public static byte[] compress(String code, Seq<LogicLink> links){
+    public static byte[] compressString(String code, Seq<LogicLink> links){
         return compress(code.getBytes(charset), links);
     }
 
@@ -376,7 +375,7 @@ public class DrawProcessor extends LogicBlock {
         }
     }
 
-    public class LogicBuild extends Building implements Ranged{
+    public class DrawProcessorBuild extends Building implements Ranged{
         /** logic "source code" as list of asm statements */
         public String code = "";
         public LExecutor executor = new LExecutor();
@@ -675,7 +674,7 @@ public class DrawProcessor extends LogicBlock {
 
         @Override
         public byte[] config(){
-            return compress(code, relativeConnections());
+            return compressString(code, relativeConnections());
         }
 
         public Seq<LogicLink> relativeConnections(){
@@ -732,7 +731,7 @@ public class DrawProcessor extends LogicBlock {
         @Override
         public void buildConfiguration(Table table){
             table.button(Icon.pencil, Styles.cleari, () -> {
-                ui.logic.show(code, executor, privileged, code -> configure(compress(code, relativeConnections())));
+                ui.logic.show(code, executor, privileged, code -> configure(compressString(code, relativeConnections())));
             }).size(40);
         }
 
@@ -760,7 +759,7 @@ public class DrawProcessor extends LogicBlock {
         public void write(Writes write){
             super.write(write);
 
-            byte[] compressed = compress(code, links);
+            byte[] compressed = compressString(code, links);
             write.i(compressed.length);
             write.b(compressed);
 
