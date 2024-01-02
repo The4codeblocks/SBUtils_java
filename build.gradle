@@ -34,7 +34,6 @@ dependencies{
     compileOnly "com.github.Anuken.Mindustry:core:$mindustryVersion"
 
     annotationProcessor "com.github.Anuken:jabel:0.9.0"
-    kapt project(":annotations")
 }
 
 //force arc version
