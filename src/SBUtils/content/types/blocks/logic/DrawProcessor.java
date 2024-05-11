@@ -154,13 +154,10 @@ public class DrawProcessor extends LogicBlock {
         public static final GraphicsType[] all = values();
     }
 
-    @Struct
     static class DisplayCmdStruct{
-        @StructField(4)
         public byte type;
 
         //at least 9 bits are required for full 360 degrees
-        @StructField(10)
         public int x, y, p1, p2, p3, p4;
     }
 
