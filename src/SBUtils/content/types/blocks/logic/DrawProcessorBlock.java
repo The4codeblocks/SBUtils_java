@@ -15,7 +15,6 @@ import arc.struct.Bits;
 import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
-import arc.*;
 
 import mindustry.gen.*;
 import mindustry.type.*;
