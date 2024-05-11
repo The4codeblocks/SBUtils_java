@@ -149,15 +149,6 @@ public class DrawProcessorBlock extends LogicBlock {
                                 var icon = Fonts.logicIcon(p1);
                                 Draw.rect(Fonts.logicIcon(p1), x, y, p2, p2 / icon.ratio(), p3);
                             }
-                            case commandPrint -> {
-                                var glyph = Fonts.logic.getData().getGlyph((char)p1);
-                                if(glyph != null){
-                                    Tmp.tr1.set(Fonts.logic.getRegion().texture);
-                                    Tmp.tr1.set(glyph.u, glyph.v2, glyph.u2, glyph.v);
-
-                                    Draw.rect(Tmp.tr1, x + Tmp.tr1.width/2f + glyph.xoffset, y + Tmp.tr1.height/2f + glyph.yoffset + Fonts.logic.getData().capHeight + Fonts.logic.getData().ascent, Tmp.tr1.width, Tmp.tr1.height);
-                                }
-                            }
                             case commandTranslate -> Draw.trans((transform == null ? (transform = new Mat()) : transform).translate(x, y));
                             case commandScale -> Draw.trans((transform == null ? (transform = new Mat()) : transform).scale(x * scaleStep, y * scaleStep));
                             case commandRotate-> Draw.trans((transform == null ? (transform = new Mat()) : transform).rotate(p1));
