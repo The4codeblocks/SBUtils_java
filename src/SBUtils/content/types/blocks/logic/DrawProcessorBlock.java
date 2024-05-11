@@ -89,7 +89,7 @@ public class DrawProcessorBlock extends LogicBlock {
         stats.add(Stat.displaySize, "@x@", displaySize, displaySize);
     }
 
-    public class DrawProcessorBuild extends LogicBuild{
+    public static class DrawProcessorBuild extends LogicBuild{
         public FrameBuffer buffer;
         public float color = Color.whiteFloatBits;
         public float stroke = 1f;
