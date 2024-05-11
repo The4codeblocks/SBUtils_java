@@ -62,7 +62,6 @@ jar{
 }
 
 task deploy(type: Jar){
-    dependsOn jarAndroid
     dependsOn jar
     archiveFileName = "${base.archivesBaseName}.jar"
 
