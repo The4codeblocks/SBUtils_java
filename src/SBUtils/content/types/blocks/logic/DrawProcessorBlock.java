@@ -134,7 +134,7 @@ public class DrawProcessorBlock extends LogicBlock {
                         switch(type){
                             case commandClear -> {
                                 //discard any pending batched sprites, so they don't get drawn over the cleared screen later
-                                Draw.discard();
+                                //Draw.discard(); faulty
                                 Core.graphics.clear(x / 255f, y / 255f, p1 / 255f, 1f);
                             }
                             case commandLine -> Lines.line(x, y, p1, p2);
