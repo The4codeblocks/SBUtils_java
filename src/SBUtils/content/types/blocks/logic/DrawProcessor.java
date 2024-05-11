@@ -43,7 +43,7 @@ import static mindustry.Vars.*;
 import arc.*;
 import mindustry.*;
 
-public class DrawProcessor extends LogicBlock {
+public class DrawProcessorBlock extends LogicBlock {
     public static final byte
         commandClear = 0,
         commandColor = 1,
@@ -73,7 +73,7 @@ public class DrawProcessor extends LogicBlock {
     public int displaySize = 64;
     public float scaleFactor = 1f;
 
-    public LogicDisplay(String name){
+    public DrawProcessorBlock(String name){
         super(name);
         update = true;
         solid = true;
@@ -90,7 +90,7 @@ public class DrawProcessor extends LogicBlock {
         stats.add(Stat.displaySize, "@x@", displaySize, displaySize);
     }
 
-    public class LogicDisplayBuild extends Building{
+    public class DrawProcessorBuild extends LogicBuild{
         public FrameBuffer buffer;
         public float color = Color.whiteFloatBits;
         public float stroke = 1f;
