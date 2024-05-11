@@ -56,7 +56,7 @@ public class SBUblocks {
     drawProcessor;
 
     public static void load(){
-        drawProcessor = new DrawProcessor("toggle-gate"){{
+        drawProcessor = new DrawProcessorBlock("toggle-gate"){{
             requirements(Category.logic, with(Items.copper, 90, Items.lead, 75, Items.silicon, 65, Items.metaglass, 10));
 
             instructionsPerTick = 2;
